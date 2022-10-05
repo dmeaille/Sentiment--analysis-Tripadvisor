@@ -1,9 +1,17 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Oct  4 13:07:48 2022
-
-@author: davim
-"""
+# @author : Davi Méaille
+# Created : 04/10/2022
+# Last modification : 05/10/2022
+# Description : 
+# 
+# This file webscrapes the reviews and grades of 
+# parisian cafes on Tripadvisor. 
+# It requires to have a chromedriver or any other 
+# driver as long as the corresponding line of code 
+# is changed. 
+# It is supposed that the file reviews.csv already 
+# exists and that the chromedriver is in the working 
+# directory. 
 
 
     
@@ -15,7 +23,6 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.ui import WebDriverWait
 
 
 import csv # we prefer csv over pandas to ensure that the memory of Python will not be saturated 
@@ -146,9 +153,9 @@ def get_reviews_tripadvisor(url, number_of_time, class_page, class_next):
         i+=1
         sleep(2)
         
-        csv_file.close()
-        del csv_file
-        del csv_writer
+    csv_file.close()
+    del csv_file
+    del csv_writer
     
 
 #%%% 
